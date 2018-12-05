@@ -1,0 +1,15 @@
+CREATE TABLE node (
+    username VARCHAR(255) NOT NULL PRIMARY KEY UNIQUE,
+    profilename VARCHAR(250) NOT NULL ,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE, 
+    college VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    state VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    occupation VARCHAR(255) NOT NULL,
+    gender VARCHAR(255) NOT NULL,
+    motto VARCHAR(255),
+    
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
