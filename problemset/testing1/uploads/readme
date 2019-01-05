@@ -1,0 +1,14 @@
+host for mysql--judge@localhost pass--AsdfgH@29
+database name--judge_database
+
+create database judge_database;
+
+create user 'judge'@'localhost' identified by 'AsdfgH@29';
+
+grant all privileges on judge_database.* to 'judge'@'localhost';
+
+flush privileges;
+
+source table.sql;//to create table using code written on editor
+
+

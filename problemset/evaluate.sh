@@ -3,6 +3,8 @@
 # parameter 2 = source code's name
 # parameter 3 = problem's name
 # parameter 4 = Time limit
+
+
 # return values
 # 0 = Correct Answer
 # 1 = Wrong Answer
@@ -14,7 +16,7 @@ path_to_file=$3'/uploads/'$2
 echo $path_to_file
 if [ $1 == 'C' ]
 then
-  gcc -lm $path_to_file -o $3/'testing_files'/a.out > $3/'testing_files'/output 2> $3/'testing_files'/error #compiling file and redirecting ouput
+  gcc -lm $path_to_file -o $3/'testing_files'/a.out  > $3/'testing_files'/output 2> $3/'testing_files'/error #compiling file and redirecting ouput
   if [ $? -eq 0 ]
   then
     echo 'Compilation Successful'
@@ -31,10 +33,10 @@ then
         if [ $? -eq 0 ]
         then
           echo "Correct Answer";
-	  exit 0;
+	        exit 0;
         else
           echo "Wrong Answer";
-	  exit 1;
+	        exit 1;
         fi
       else # If Run wasn't Successful
         echo 'Run time error'
@@ -132,7 +134,9 @@ then
       echo "Time Limit exceeded";
       exit 4;
     else
+      echo python3 $path_to_file <$3/'testing_files'/test_input > $3/'testing_files'/output 2> $3/'testing_files'/error;
       python3 $path_to_file <$3/'testing_files'/test_input > $3/'testing_files'/output 2> $3/'testing_files'/error
+      # echo $?;
       if [ $? -eq 0 ]
       then
     	    diff $3/'testing_files'/output $3/'testing_files'/real_output #in case of success print output

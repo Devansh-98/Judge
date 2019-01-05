@@ -1,0 +1,100 @@
+//CS16B1011
+#include<stdio.h>
+int main()
+{
+	int marks=102,count=0;
+	scanf("%d",&marks);
+  if(marks<0)
+  {
+		printf("Please enter the correct marks\n");
+		count++;
+  }
+  else
+  {
+	if(marks<=100)
+	{
+		count++;
+		if(marks>30)
+		{
+			count++;
+			if(marks>40)
+			{
+				count++;
+				if(marks>50)
+				{
+					count++;
+					if(marks>60)
+					{
+						count++;
+						if(marks>70)
+						{
+							count++;
+							if(marks>75)
+							{
+								count++;
+								if(marks>80)
+								{
+									count++;
+									if(marks>90)
+									{
+										count++;
+										if(marks>95)
+										{
+											count++;
+											printf("A+\n");
+										}
+										else
+										{
+											printf("A\n");
+										}
+									}
+									else
+									{
+										printf("A-\n");
+									}
+								}
+								else
+								{
+									printf("B\n");
+								}
+							}
+							else
+							{
+								printf("B-\n");
+							}
+						}
+						else
+						{
+							printf("C\n");
+						}
+					}
+					else
+					{
+						printf("C-\n");
+					}
+				}
+				else
+				{
+					printf("D\n");
+				}
+			}
+			else
+			{
+				printf("FS\n");
+			}
+		}
+		else
+		{
+			printf("FR\n");
+		}
+	}
+  
+	else
+	{
+		printf("Please enter the correct marks\n");
+		count++;
+	}
+  }
+	printf("%d\n",count);
+	return 0;
+}

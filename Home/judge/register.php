@@ -1,7 +1,7 @@
 <?php
 // Include config file
 require_once "config.php";
- 
+
 // Define variables and initialize with empty values
 
 $username = $profilename = $email = $college = $city = $state = $country = $occupation = $gender = $motto = "";
@@ -10,29 +10,29 @@ $username_err = $profilename_err = $email_err = $college_err = $city_err = $stat
 
 $password = $confirm_password = "";
 $password_err = $confirm_password_err = "";
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
         $sql = "SELECT username FROM node WHERE username = ?";
-        
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
+
             // Set parameters
             $param_username = trim($_POST["username"]);
-            
+
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 /* store result */
                 mysqli_stmt_store_result($stmt);
-                
+
                 if(mysqli_stmt_num_rows($stmt) == 1){
                     $username_err = "This username is already taken.";
                 } else{
@@ -42,14 +42,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Oops! Something went wrong. Please try again later.";
             }
         }
-         
+
         // Close statement
         mysqli_stmt_close($stmt);
     }
-    
+
 
     if(empty(trim($_POST["profilename"]))){
-        $profilename_err = "Please enter a Profile Name.";     
+        $profilename_err = "Please enter a Profile Name.";
     } elseif(strlen(trim($_POST["profilename"])) > 50){
         $profilename_err = "Profile Name must be less than 50 characters.";
     } else{
@@ -60,42 +60,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate password
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter a password.";     
+        $password_err = "Please enter a password.";
     } elseif(strlen(trim($_POST["password"])) < 6){
         $password_err = "Password must have atleast 6 characters.";
     } else{
         $password = trim($_POST["password"]);
     }
-    
+
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Please confirm password.";     
+        $confirm_password_err = "Please confirm password.";
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($password != $confirm_password)){
             $confirm_password_err = "Password did not match.";
         }
     }
-    
+
 
     if(empty(trim($_POST["email"]))){
         $email_err = "Please enter a E-mail.";
     } else{
         // Prepare a select statement
         $sql = "SELECT username FROM node WHERE email = ?";
-        
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_email);
-            
+
             // Set parameters
             $param_email = trim($_POST["email"]);
-            
+
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 /* store result */
                 mysqli_stmt_store_result($stmt);
-                
+
                 if(mysqli_stmt_num_rows($stmt) == 1){
                     $email_err = "This E-mail is already in use.";
                 } else{
@@ -105,14 +105,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Oops! Something went wrong. Please try again later.";
             }
         }
-         
+
         // Close statement
         mysqli_stmt_close($stmt);
     }
 
 
     if(empty(trim($_POST["college"]))){
-        $college_err = "Please enter a College Name.";     
+        $college_err = "Please enter a College Name.";
     } elseif(strlen(trim($_POST["college"])) > 100){
         $college_err = "College Name must be less than 100 characters.";
     } else{
@@ -120,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["city"]))){
-        $city_err = "Please enter your City Name.";     
+        $city_err = "Please enter your City Name.";
     } elseif(strlen(trim($_POST["city"])) > 50){
         $city_err = "City Name must be less than 50 characters.";
     } else{
@@ -128,7 +128,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["state"]))){
-        $state_err = "Please enter your State Name.";     
+        $state_err = "Please enter your State Name.";
     } elseif(strlen(trim($_POST["state"])) > 50){
         $state_err = "State Name must be less than 50 characters.";
     } else{
@@ -136,7 +136,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["country"]))){
-        $country_err = "Please enter your Country.";     
+        $country_err = "Please enter your Country.";
     } elseif(strlen(trim($_POST["country"])) > 50){
         $country_err = "Country Name must be less than 50 characters.";
     } else{
@@ -144,7 +144,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["occupation"]))){
-        $occupation_err = "Please enter your Occupation.";     
+        $occupation_err = "Please enter your Occupation.";
     } elseif(strlen(trim($_POST["occupation"])) > 200){
         $occupation_err = "Occupation name must be less than 200 characters.";
     } else{
@@ -152,7 +152,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["gender"]))){
-        $gender_err = "Please enter your Gender";     
+        $gender_err = "Please enter your Gender";
     } elseif(strlen(trim($_POST["gender"])) > 50){
         $gender_err = "Gender must be less than 50 characters.";
     } else{
@@ -160,7 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["motto"]))){
-        $motto_err = "Kuch motto nhi h BheNchod";     
+        $motto_err = "Kuch motto nhi h BheNchod";
     } elseif(strlen(trim($_POST["motto"])) > 150){
         $motto_err = "Motto must be less than 150 characters.";
     } else{
@@ -168,20 +168,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
 
-
-
-
-
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($profilename_err) && empty($email_err) && empty($college_err)&& empty($city_err)&& empty($state_err)&& empty($country_err)&& empty($occupation_err)&& empty($gender_err)&& empty($motto_err)){
-        
+
         // Prepare an insert statement
-        $sql = "INSERT INTO node (username, profilename, password,email,college,city,state,country,occupation,gender,motto) VALUES (?, ?,?,?,?,?,?,?,?,?,?)";
-         
+        $sql = "INSERT INTO node (username, profilename, password,email,college,city,state,country,occupation,gender,motto,correct_answer,wrong_answer) VALUES (?, ?,?,?,?,?,?,?,?,?,?,?,?)";
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssssss", $param_username,$param_profilename, $param_password,$param_email,$param_college,$param_city,$param_state,$param_country,$param_occupation,$param_gender,$param_motto);
-            
+            mysqli_stmt_bind_param($stmt, "sssssssssssss", $param_username,$param_profilename, $param_password,$param_email,$param_college,$param_city,$param_state,$param_country,$param_occupation,$param_gender,$param_motto,$wa,$ca);
+
             // Set parameters
             $param_username = $username;
             $param_profilename = $profilename;
@@ -194,8 +190,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_occupation = $occupation;
             $param_gender = $gender;
             $param_motto = $motto;
-            
-            
+            $ca=";";
+            $wa=";";
+
+
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
@@ -204,16 +202,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Something went wrong. Please try again later.";
             }
         }
-         
+
         // Close statement
         mysqli_stmt_close($stmt);
     }
-    
+
     // Close connection
     mysqli_close($link);
 }
 ?>
- 
+
 
 
 <!DOCTYPE html>
@@ -252,7 +250,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
-            
+
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                 <label>E-mail</label>
                 <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
@@ -300,13 +298,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $motto_err; ?></span>
             </div>
 
-            
+
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
-    </div>    
+    </div>
 </body>
 </html>
