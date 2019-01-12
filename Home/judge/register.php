@@ -81,6 +81,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["email"]))){
         $email_err = "Please enter a E-mail.";
     } else{
+        $valid_check = trim($_POST["email"]);
+        if(!filter_var($valid_check, FILTER_VALIDATE_EMAIL))
+        {
+            $email_err = "Please enter a Valid E-mail.";
+
+        }
+        else
+        {
+        
         // Prepare a select statement
         $sql = "SELECT username FROM node WHERE email = ?";
 
@@ -108,6 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Close statement
         mysqli_stmt_close($stmt);
+    }
     }
 
 

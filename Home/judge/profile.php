@@ -14,8 +14,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     -->
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }
         /* Navbar container */
@@ -154,7 +152,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <div class="navbar"> 
       <div class="topnav-left">
         <a href="welcome.php">Home</a>
-        <a href="#news">News</a>
+        <!-- <a href="#news">News</a> -->
       </div>
       <div class="topnav-right">
         <a href="reset_password.php">Reset Password</a>
@@ -188,18 +186,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                             <?php echo $_SESSION["profilename"]; ?>
                                         </h4> 
                                         </br>
-                                        <!-- <h6>
-                                            Web Developer and Designer
-                                        </h6> -->
-                                        <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         <div class="col-md-2">
@@ -208,18 +194,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <!-- <div class="profile-work">
-                                <p>WORK LINK</p>
-                                <a href="">Website Link</a><br/>
-                                <a href="">Bootsnipp Profile</a><br/>
-                                <a href="">Bootply Profile</a>
-                                <p>SKILLS</p>
-                                <a href="">Web Designer</a><br/>
-                                <a href="">Web Developer</a><br/>
-                                <a href="">WordPress</a><br/>
-                                <a href="">WooCommerce</a><br/>
-                                <a href="">PHP, .Net</a><br/>
-                            </div> -->
                         </div>
                         <div class="col-md-8">
                             <div class="tab-content profile-tab" id="myTabContent">
