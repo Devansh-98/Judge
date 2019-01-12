@@ -20,7 +20,7 @@ $otp=$otp_err="";
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if username is empty
+    // Check if OTP is empty
     if(empty(trim($_POST["otp"]))){
         $otp_err = "Please enter correct OTP.";
     } else{
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION["gender"] = $gender; 
                         $_SESSION["motto"] = $motto;
                         $_SESSION["college"]=$college;
-                        header("location: welcome.php");
+                        header("location: reset_password.php");
                     }
                     else
                     {
