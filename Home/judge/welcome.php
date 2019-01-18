@@ -35,7 +35,7 @@ $result = $conn->query($sql);
 echo "<center><table border='4'font-size: 24px; style='color: blue;'>";
 if ($result->num_rows > 0) {
     // output data of each row
-    echo "<th>Problem ID</th><th> Problem Name</th><th>time_limit</th><th> accuracy</th><br>";
+    echo "<center><th>Problem ID</th><th> Problem Name</th><th>Time Limit</th><th> Accuracy</th><br>";
     while($row = $result->fetch_assoc()) {
       $flag=false;
       $arrlength=count($correct);
@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
       {
         if ($correct[$x]===$row["prob_id"])
         {
-          echo "<tr style='font-size: 34px;color:green;'>";
+          echo "<tr style='font-size: 34px;color:green;background-color:#33ff33;'>";
           $flag=true;
           break;
 
@@ -70,8 +70,8 @@ if ($result->num_rows > 0) {
       else{
         $accuracy=(float)$row["correct_submission"]/((float)$row["wrong_submission"]+(float)$row["correct_submission"]);
       }
-      echo "<a href='../../problemset/".$row["prob_id"]."/'>";
-        echo "<td><a href='../../problemset/".$row["prob_id"]."/'>".$row["prob_id"]."</a></td><td> ".$row["prob_name"]."</td><td> ".$row["time_limit"]."</td><td> ".$accuracy."</td><br>";
+      echo "<center><a href='../../problemset/".$row["prob_id"]."/'>";
+        echo "<td><center><a href='../../problemset/".$row["prob_id"]."/'>".$row["prob_id"]."</a></td><td><center> ".$row["prob_name"]."</td><td><center> ".$row["time_limit"]."</td><td><center> ".number_format($accuracy,4)."</td><br>";
       echo  "</a>";
     }
 } else {

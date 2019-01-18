@@ -26,6 +26,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <!-- <a href="#news">News</a> -->
       </div>
       <div class="topnav-right">
+      <a href="edit_profile.php">Edit Profile</a>
         <a href="reset_password.php">Reset Password</a>
         <a href="logout.php">Logout</a>
       </div>
@@ -62,7 +63,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                         </div>
                     </div>
                     <div class="row">
