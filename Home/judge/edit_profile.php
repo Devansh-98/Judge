@@ -146,8 +146,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
+<<<<<<< HEAD
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
+=======
+        <h2>Edit Profile</h2>
+>>>>>>> b74fd3a65add5e4ca285f6addd3af0e87f162317
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($profilename_err)) ? 'has-error' : ''; ?>">
                 <label>Profile Name</label>
@@ -197,12 +201,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $motto_err; ?></span>
             </div>
 
+<<<<<<< HEAD
             
+=======
+>>>>>>> b74fd3a65add5e4ca285f6addd3af0e87f162317
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
+<<<<<<< HEAD
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
+=======
+>>>>>>> b74fd3a65add5e4ca285f6addd3af0e87f162317
         </form>
     </div>    
 </body>
