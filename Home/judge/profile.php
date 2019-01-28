@@ -56,9 +56,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <div class="profile-head">
                                         </br>
                                         </br>
-                                        <h4>
+                                        <h2>
                                             <?php echo $_SESSION["profilename"]; ?>
-                                        </h4> 
+                                        </h2> 
                                         </br>
                             </div>
                         </div>
@@ -117,6 +117,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p><?php echo $_SESSION["email"];?></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Gender</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><?php echo $_SESSION["gender"];?></p>
                                                 </div>
                                             </div>
                                             <div class="row">

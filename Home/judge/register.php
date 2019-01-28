@@ -292,13 +292,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <div class="form-group <?php echo (!empty($occupation_err)) ? 'has-error' : ''; ?>">
                 <label>Occupation</label>
-                <input type="text" name="occupation" class="form-control" value="<?php echo $occupation; ?>">
+                <br>
+                <input type="radio" name="occupation" class="w3-radio" value="Student" checked>
+                <label>Student</label>
+                <br>
+                <input type="radio" name="occupation" class="w3-radio" value="Professional">
+                <label>Professional</label>
                 <span class="help-block"><?php echo $occupation_err; ?></span>
             </div>
 
             <div class="form-group <?php echo (!empty($gender_err)) ? 'has-error' : ''; ?>">
                 <label>Gender</label>
-                <input type="text" name="gender" class="form-control" value="<?php echo $gender; ?>">
+                <br>
+                <input type="radio" name="gender" class="w3-radio" value="Male" checked>
+                <label>Male</label>
+                <br>
+                <input type="radio" name="gender" class="w3-radio" value="Female">
+                <label>Female</label>
+                <br>
+                <input type="radio" name="gender" class="w3-radio" value="Other">
+                <label>Other</label>
                 <span class="help-block"><?php echo $gender_err; ?></span>
             </div>
 

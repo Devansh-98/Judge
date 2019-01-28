@@ -6,6 +6,39 @@
   </title>
 </head>
 <body>
+  All submissions for this problem are available.In this problem, you will be given an array A of size N. The array will be 0-indexed and each element of the array will be a positive integer not greater than 9. You will be asked Q queries on this array.
+
+In each query you will be given 3 integers l,r,x. You have to determine if the element x is present in the range A[l],A[l+1]....A[r]
+Input:
+First line of each test case contain the integer N, the size of the array.
+Second line contain N space separated integers denoting the elements of the array
+Next line contains the integer Q
+Q lines follow where each of them contain 3 space seperated integers l,r,x.
+Output:
+For each testcase, output Q lines corresponding to the Q queries. Print "yes" if x is present in the given range, otherwise print "no".
+
+Constraints
+1≤N≤105
+1≤Q≤105
+1≤A[i],x≤9
+0≤l,r≤N−1
+Sample Input:
+5
+1 2 3 7 9
+5
+0 3 1
+0 3 2
+0 3 3
+0 3 7
+0 3 9
+Sample Output:
+yes
+yes
+yes
+yes
+no
+EXPLANATION:
+The first query yields yes as 1 is present in the sub array A[0],A[1],A[2],A[3]. The last query yields no as 9 is not present in the sub array A[0],A[1],A[2],A[3].
   <form name="submission" action="../submit.php" method="POST" enctype="multipart/form-data">
     Upload source code<br>
     <input type="file" name="srcCode" value="fileupload" id="fileupload">

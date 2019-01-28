@@ -6,6 +6,31 @@
   </title>
 </head>
 <body>
+  All submissions for this problem are available.Jamoora is a microbiologist. Unfortunately, there has been an outbreak of plague in his hometown. Plague is being spread by mice which are currently N in number and they increase every day by R% through reproduction(obviously). Number of mice remaining is rounded down to nearest integer after each day. Also, due to resource constraints Jamoora can only remove a constant number of mice S every day in the morning. Jamoora has received order from his government that he must eradicate the plague within D days. Your task is to help Jamoora by finding the minimum number S that successfully eradicates the plague in D days.
+
+Input:
+First line will contain T, number of testcases. Then the testcases follow.
+Each testcase contains of a single line of input, three space seperated integers N, R, D .
+Output:
+For each testcase, output minimum S that successfully eradicates the plague in D days.
+
+Constraints
+1≤T≤10
+2≤N≤2∗109
+1≤R≤105
+1≤D≤104
+Sample Input:
+1
+1000 50 5
+Sample Output:
+384
+EXPLANATION:
+In the above case, the set amount of rats to be removed everyday(the solution) is 384. On the first day after removal 616 rats are left, which after reproduction becomes 924. Similarly, for further days, number of rats become,
+Day 2: 540 & 810,
+Day 3: 426 & 639,
+Day 4: 255 & 382,
+Day 5: 0 and 0.
+Thus, plague is eradicated on the fifth day.
   <form name="submission" action="../submit.php" method="POST" enctype="multipart/form-data">
     Upload source code<br>
     <input type="file" name="srcCode" value="fileupload" id="fileupload">

@@ -74,6 +74,12 @@
         .profile-head h4{
             color: #0062cc;
         }
+<<<<<<< HEAD
+=======
+        .profile-head h2{
+            color: #0062cc;
+        }
+>>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
         .profile-edit-btn{
             border: none;
             border-radius: 1.5rem;
