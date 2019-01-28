@@ -1,0 +1,44 @@
+        body {position: absolute; margin: 0; width:100%; background: -webkit-linear-gradient(left, #3931af, #00c6ff); min-height: 600px; }
+
+        /* Navbar container */
+        .navbar {
+            position: fixed;
+            width: 100%;
+          top: 0px;
+          left: 0px;
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        .topnav-right {
+            float: right;
+          }
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: red;
+        }
+        .white-box { width: 900x; height: 100%; margin-top: 100px; margin-bottom: 50px; margin-left: 50px; margin-right: 50px;   
+        
+        background: rgba(255,255,255,0.9);
+        padding: 30px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        }
+
+        

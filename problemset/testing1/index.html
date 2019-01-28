@@ -6,6 +6,31 @@
   </title>
 </head>
 <body>
+  All submissions for this problem are available.Lucas Sequence is an integer sequence where each term is a sum of two previous terms. First and Second term of lucas sequence are 2 and 1 respectively.The first few terms of Lucas sequence are :
+
+                      {2,1,3,4,7,11,18.........
+You are given a string S consisting of lower case English alphabets. Your task is to determine whether any permutation of the frequencies of the characters form the Lucas Sequence. If the frequencies form the Lucas sequence, give output "FIT" else output "UNFIT".
+
+Input:
+First line will contain T, number of testcases. Then the testcases follow.
+Each testcase contains of a single line of input, the string S
+Output:
+For each testcase, output in a single line "FIT" or "UNFIT"
+
+Constraints
+1≤T≤50
+1≤|S|≤105
+Sample Input:
+    2
+    acaccb
+    abba
+Sample Output:
+    FIT
+    UNFIT
+EXPLANATION:
+The character frequencies of the first example are a=2,b=1,c=3 which can be permutated as [2,1,3]. Which forms the lucas sequence.
+
+In the second example, no permutation of frequencies will form the lucas sequence.
   <form name="submission" action="../submit.php" method="POST" enctype="multipart/form-data">
     Upload source code<br>
     <input type="file" name="srcCode" value="fileupload" id="fileupload">
