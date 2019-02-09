@@ -98,7 +98,7 @@ $conn->close();
 
     
 </head>
-<body>
+<body style="background-image:url(13.jpg)">
 
     <div class="navbar">
       <a href="#home">Home</a>

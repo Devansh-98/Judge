@@ -1,5 +1,5 @@
-        body {position: absolute; margin: 0; width:100%; background: -webkit-linear-gradient(left, #3931af, #00c6ff); min-height: 600px; }
-
+         
+        
         /* Navbar container */
         .navbar {
             position: fixed;
@@ -28,8 +28,7 @@
           background-color: red;
         }
         .white-box { width: 900x; height: 100%; margin-top: 100px; margin-bottom: 50px; margin-left: 50px; margin-right: 50px;   
-        
-        background: rgba(255,255,255,0.9);
+        background: rgba(255,255,255,0.1);
         padding: 30px;
         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
         -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
