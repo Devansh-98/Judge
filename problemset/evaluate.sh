@@ -11,9 +11,9 @@
 # 2 = Compilation Error
 # 3 = Run time Error
 # 4 = Time limit exceeded
-echo $1,$2,$3,$4
+# echo $1,$2,$3,$4
 path_to_file=$3'/uploads/'$2
-echo $path_to_file
+# echo $path_to_file
 if [ $1 == 'C' ]
 then
   gcc -lm $path_to_file -o $3/'testing_files'/a.out  > $3/'testing_files'/output 2> $3/'testing_files'/error #compiling file and redirecting ouput

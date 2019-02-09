@@ -36,10 +36,11 @@ if(isset($_FILES['srcCode'])){
   $file_ext=strtolower(end(explode('.',$_FILES['srcCode']['name'])));
   $language= $_POST['Language'];
   if(empty($errors)==true){
+    # echo $prob_code."/uploads/".$file_name;
     if(move_uploaded_file($file_tmp,$prob_code."/uploads/".$file_name))
     {
       $query='bash evaluate.sh '.$language.' '.$file_name.' '.$prob_code.' '.$time_limit;
-    #  echo $query;
+     # echo $query;
       exec($query,$o,$r);
       switch ($r) {
         case '0':
