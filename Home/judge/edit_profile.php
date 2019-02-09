@@ -9,11 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 // Include config file
 require_once "config.php";
  
-<<<<<<< HEAD
-// Define variables and initialize with empty values
-=======
 // Define variables and initialize with session values
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
 $username =$_SESSION["username"];
 $profilename =$_SESSION["profilename"];
 $college =$_SESSION["college"];
@@ -27,12 +23,8 @@ $motto = $_SESSION["motto"];
 $username_err = $profilename_err =$college_err = $city_err = $state_err = $country_err = $occupation_err = $gender_err = $motto_err = "";
  
 // Processing form data when form is submitted
-<<<<<<< HEAD
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-=======
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
  
     if(empty(trim($_POST["profilename"]))){
         $profilename_err = "Please enter a Profile Name.";     
@@ -99,16 +91,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
 
 
-<<<<<<< HEAD
-    // Check input errors before inserting in database
-    if( empty($profilename_err) && empty($college_err)&& empty($city_err)&& empty($state_err)&& empty($country_err)&& empty($occupation_err)&& empty($gender_err)&& empty($motto_err)){
-        
-        // Prepare an insert statement
-        $sql = "UPDATE node SET profilename=?,college=?,city=?,state=?,country=?,occupation=?,gender=?,motto=? WHERE username = ?";
-         
-            echo "suskjdb";
-        if($stmt = mysqli_prepare($link, $sql)){
-=======
     // Check input errors before updating in database
     if( empty($profilename_err) && empty($college_err)&& empty($city_err)&& empty($state_err)&& empty($country_err)&& empty($occupation_err)&& empty($gender_err)&& empty($motto_err)){
         
@@ -118,7 +100,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             echo "suskjdb";
         if($stmt = mysqli_prepare($link, $sql))
         {
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "sssssssss", $param_profilename,$param_college,$param_city,$param_state,$param_country,$param_occupation,$param_gender,$param_motto,$param_username);
             
@@ -136,17 +117,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-<<<<<<< HEAD
-                header("location: login.php");
-                exit();
-            } else{
-=======
                 //header("location: login.php");
                 
             }
             else
             {
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
                 echo "Something went wrong. Please try again later.";
             }
         }
@@ -154,8 +129,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         // Close statement
         mysqli_stmt_close($stmt);
     }
-<<<<<<< HEAD
-=======
 
     $sql = "SELECT username,profilename,password,email,city,state,country,occupation,gender,motto,college FROM node WHERE username = ?";
 
@@ -199,15 +172,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     // Close statement
     mysqli_stmt_close($stmt);
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
     
     // Close connection
     mysqli_close($link);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
 ?>
  
 
@@ -225,16 +193,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 </head>
 <body>
     <div class="wrapper">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
-=======
         <h2>Edit Profile</h2>
->>>>>>> b74fd3a65add5e4ca285f6addd3af0e87f162317
-=======
-        <h2>Edit Profile</h2>
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($profilename_err)) ? 'has-error' : ''; ?>">
                 <label>Profile Name</label>
@@ -268,24 +227,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
             <div class="form-group <?php echo (!empty($occupation_err)) ? 'has-error' : ''; ?>">
                 <label>Occupation</label>
-<<<<<<< HEAD
-                <input type="text" name="occupation" class="form-control" value="<?php echo $occupation; ?>">
-=======
                 <br>
                 <input type="radio" name="occupation" class="w3-radio" value="Student" checked>
                 <label>Student</label>
                 <br>
                 <input type="radio" name="occupation" class="w3-radio" value="Professional">
                 <label>Professional</label>
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
                 <span class="help-block"><?php echo $occupation_err; ?></span>
             </div>
 
             <div class="form-group <?php echo (!empty($gender_err)) ? 'has-error' : ''; ?>">
                 <label>Gender</label>
-<<<<<<< HEAD
-                <input type="text" name="gender" class="form-control" value="<?php echo $gender; ?>">
-=======
                 <br>
                 <input type="radio" name="gender" class="w3-radio" value="Male" checked>
                 <label>Male</label>
@@ -295,7 +247,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <br>
                 <input type="radio" name="gender" class="w3-radio" value="Other">
                 <label>Other</label>
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
                 <span class="help-block"><?php echo $gender_err; ?></span>
             </div>
 
@@ -304,25 +255,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <input type="text" name="motto" class="form-control" value="<?php echo $motto; ?>">
                 <span class="help-block"><?php echo $motto_err; ?></span>
             </div>
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-=======
->>>>>>> b74fd3a65add5e4ca285f6addd3af0e87f162317
-=======
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
-            <div class="form-group">
+     <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
-=======
->>>>>>> b74fd3a65add5e4ca285f6addd3af0e87f162317
-=======
->>>>>>> 52e3d9321ec43d446567d5ba8f1c5d08b573af17
         </form>
     </div>    
 </body>
