@@ -259,8 +259,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
-        </form>
+         </form>
     </div>    
 </body>
 </html>

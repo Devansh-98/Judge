@@ -18,7 +18,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <title>Welcome</title>
    
 </head>
-<body>
+<body style="background-image:url(13.jpg)">
 
     <div class="navbar"> 
       <div class="topnav-left">
